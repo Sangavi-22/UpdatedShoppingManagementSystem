@@ -6,7 +6,7 @@ import View.MobilePhone.*;
 import java.time.LocalDate;
 
 public class PhoneController implements PhoneControllerService{
-    private static int id=1;
+    private final static int id=1;
     private int phoneId;
     private Phone phone;
     private final PhoneViewService phoneView=new PhoneView(this);
