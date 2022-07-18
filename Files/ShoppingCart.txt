@@ -1,0 +1,4 @@
+guest|1|1
+Priya|1|1
+Priya|2|0
+Ram|1|0
