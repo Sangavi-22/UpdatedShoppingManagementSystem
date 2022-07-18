@@ -1,2 +1,0 @@
-1|Samsung Galaxy M21|10000 mAH|12.1 cm |12000
-2|Asus Zenfone Max Pro M1|15000|10.1 cm |12000
