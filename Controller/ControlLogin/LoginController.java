@@ -90,11 +90,21 @@ public class LoginController implements LoginControllerService {
                 int userInput = loginView.getChoiceOfUser();
                 switch(AdminActions.values()[userInput-1]) {
                     case REMOVE_SELLER:
+                        this.userName = loginView.getUserName(); 
+                        boolean sellerPresent=loginUtil.isSellerPresentAlready(userName);
+                        adminControls.removeUser(userName,AdminActions.values()[userInput-1]); 
+                        if(sellerPresent && !(loginUtil.isSellerPresentAlready(userName))) {
+                            loginView.displayAccountRemoved();
+                        } 
+                        else {
+                            loginView.displayNoAccount();
+                        } 
+                        break;
                     case REMOVE_CUSTOMER:
                         this.userName = loginView.getUserName();
-                        boolean userPresent = loginUtil.isSellerPresentAlready(userName) || loginUtil.isCustomerPresentAlready(userName);
+                        boolean customerPresent =loginUtil.isCustomerPresentAlready(userName);
                         adminControls.removeUser(userName,AdminActions.values()[userInput-1]);
-                        if(userPresent && !(loginUtil.isSellerPresentAlready(userName))|| loginUtil.isCustomerPresentAlready(userName)) {
+                        if(customerPresent && !(loginUtil.isCustomerPresentAlready(userName))) {
                             loginView.displayAccountRemoved();
                         }
                         else {
