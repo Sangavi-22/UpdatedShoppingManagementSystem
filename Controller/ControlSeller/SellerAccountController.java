@@ -12,18 +12,15 @@ public class SellerAccountController implements SellerAccountControllerService{
     private final String userName,password;
     private int productId,userChoice;
     private Seller seller;
-    private final SellerProfileDetailsViewService sellerProfileDetailsView;
-    private final SellerMenuViewService sellerMenuView;
-    private final PrintSellerInfoViewService printSellerInfoView;
+    private final SellerProfileDetailsViewService sellerProfileDetailsView=new SellerProfileDetailsView(this);
+    private final SellerMenuViewService sellerMenuView=new SellerMenuView();
+    private final PrintSellerInfoViewService printSellerInfoView=new PrintSellerInfoView();
     private final DataSourceService dataSource=DataSource.getInstance();
     private final ShopControllerService shopController=new ShopController();
     private final OrderControllerService orderController=new OrderController();
     public SellerAccountController(String userName,String password) {
         this.userName=userName;
         this.password=password;
-        sellerProfileDetailsView=new SellerProfileDetailsView(this);
-        sellerMenuView=new SellerMenuView();
-        printSellerInfoView=new PrintSellerInfoView();
     }
     public void inputSellerInfo(){
         sellerProfileDetailsView.inputSellerDetails();
