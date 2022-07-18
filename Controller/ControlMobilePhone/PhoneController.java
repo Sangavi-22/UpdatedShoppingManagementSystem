@@ -20,7 +20,7 @@ public class PhoneController implements PhoneControllerService{
             return dataSource.getLastPhoneId()+1;
         }
         else {
-            return id++;
+            return id;
         }
     }
     public void setPhoneId(int phoneId){
