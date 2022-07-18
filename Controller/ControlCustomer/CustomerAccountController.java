@@ -15,9 +15,9 @@ public class CustomerAccountController implements CustomerAccountControllerServi
     private final String userName,password;
     private int quantity,userChoice;
     private Customer customer;
-    private final CustomerProfileDetailsViewService customerProfileDetailsView;
-    private final PrintCustomerInfoViewService printCustomerInfoView;
-    private final CustomerMenuViewService customerMenuView;
+    private final CustomerProfileDetailsViewService customerProfileDetailsView=new CustomerProfileDetailsView(this);
+    private final CustomerMenuViewService customerMenuView=new CustomerMenuView();
+    private final PrintCustomerInfoViewService printCustomerInfoView=new PrintCustomerInfoView();
     private final ShoppingCart model =new ShoppingCart();
     private final ShoppingCartControllerService shoppingCartController=new ShoppingCartController(model);
     private final ShopControllerService shopController=new ShopController();
@@ -27,9 +27,6 @@ public class CustomerAccountController implements CustomerAccountControllerServi
     public CustomerAccountController(String userName,String password) {
         this.userName=userName;
         this.password=password;
-        customerProfileDetailsView=new CustomerProfileDetailsView(this);
-        customerMenuView=new CustomerMenuView();
-        printCustomerInfoView=new PrintCustomerInfoView();
     }
     public void inputCustomerInfo(){
         customerProfileDetailsView.inputCustomerDetails();
@@ -339,3 +336,5 @@ public class CustomerAccountController implements CustomerAccountControllerServi
         printCustomerInfoView.printCustomerDetails(customer.getName(),customer.getEmail(),customer.getMobileNum(),customer.getShippingAddress());
     }
 }
+
+                          
