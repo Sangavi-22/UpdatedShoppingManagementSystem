@@ -1,6 +1,6 @@
 # UpdatedShoppingManagementSystem    
 
-This repository is an updated version of the previous repository Shopping Management System. Here I have made some changes in the implementation of MVC architecture. 
+This repository is an updated version of the previous repository Shopping Management System. Here I have made some changes in the implementation of MVC architecture. The data collected will be stored and retreived from files.
 
 In this shopping management system, there are four users namely : Sellers, Customers, Guest users and the Admin. 
 
