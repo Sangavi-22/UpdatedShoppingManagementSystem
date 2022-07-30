@@ -30,9 +30,7 @@ Seller:  
 
   10. View their profile details
   
-  11.Update their profile if needed
-
-  11. Remove a customer account    
+  11. Update their profile if needed    
 
 Customer: 
 
